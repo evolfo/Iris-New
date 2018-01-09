@@ -1,41 +1,52 @@
 /* Media Queries */
 
 // Small tablets and large smartphones (landscape view)
-$screen-sm-min: 576px;
+$screen-sm-max: 576px;
 
 // Small tablets (portrait view)
-$screen-md-min: 768px;
+$screen-md-max: 768px;
+
+// Small tablets (portrait view)
+$screen-md-min: 769px;
+
 
 // Tablets and small desktops
-$screen-lg-min: 992px;
+$screen-lg-max: 992px;
 
 // Large tablets and desktops
-$screen-xl-min: 1200px;
+$screen-xl-max: 1200px;
 
 // Small devices
 @mixin sm {
-   @media (max-width: #{$screen-sm-min}) {
+   @media (max-width: #{$screen-sm-max}) {
        @content;
    }
 }
 
 // Medium devices
 @mixin md {
-   @media (max-width: #{$screen-md-min}) {
+   @media (max-width: #{$screen-md-max}) {
+       @content;
+   }
+}
+
+// Medium devices min-width
+@mixin md-min {
+   @media (min-width: #{$screen-md-min}) {
        @content;
    }
 }
 
 // Large devices
 @mixin lg {
-   @media (max-width: #{$screen-lg-min}) {
+   @media (max-width: #{$screen-lg-max}) {
        @content;
    }
 }
 
 // Extra large devices
 @mixin xl {
-   @media (max-width: #{$screen-xl-min}) {
+   @media (max-width: #{$screen-xl-max}) {
        @content;
    }
 }
@@ -43,22 +54,57 @@ $screen-xl-min: 1200px;
 /**
  * Site header
  */
+.header {display: none;}
+
 .site-header {
   min-height: $spacing-unit * 1.865;
-  position: absolute;
+  position: fixed;
   z-index: 1;
   width: 100%;
+  display: block;
   // Positioning context for the mobile navigation icon
   //position: relative;
   img {margin: 0 auto; display: block; max-width: 10rem; }
   a {color: #fff; font-weight: 100; font-family: 'helvetica';}
   a:hover {text-decoration: none; color: #ecae96cc;}
   a:focus {color:#ecae96cc;}
-  ul {list-style-type: none; display: table; padding-top: 2rem;
+  ul {list-style-type: none; display: table; padding-top: 1.2rem;
       li {padding: .9rem; display: table-cell; vertical-align: middle; text-transform: uppercase;} 
+
+  }
+
+.site-header {
+  ul > .display-none {@include md {display: none;}}
   }
   
 }
+
+.site-header > div > ul {@include md {margin:0 auto;}}
+
+.site-header1 {
+  min-height: $spacing-unit * 1.865;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  background-color: #161618;
+  // Positioning context for the mobile navigation icon
+  //position: relative;
+  img {margin: 0 auto; display: block; max-width: 6rem; }
+  a {color: #fff; font-weight: 100; font-family: 'helvetica';}
+  a:hover {text-decoration: none; color: #ecae96cc;}
+  a:focus {color:#ecae96cc;}
+  ul {list-style-type: none; display: table; padding-top: .2rem;
+      li {padding: .9rem; display: table-cell; vertical-align: middle; text-transform: uppercase;} 
+
+  }
+
+.site-header1 {
+  ul > .display-none {@include md {display: none;}}
+  }
+  
+}
+
+.site-header1 > div > ul {@include md {margin:0 auto;}}
 
 .site-title {
   @include relative-font-size(1.625);
@@ -87,8 +133,10 @@ $screen-xl-min: 1200px;
   }
 
   .page-link {
-    color: $text-color;
+    color: #fff;
     line-height: $base-line-height;
+
+    @include md-min {display:none;}
 
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
@@ -96,12 +144,17 @@ $screen-xl-min: 1200px;
     }
   }
 
-  @include media-query($on-palm) {
+  @include sm {
+    top: 10px !important;
+    right:10px !important;
+  }
+
+  @include md {
     position: absolute;
-    top: 9px;
-    right: $spacing-unit / 2;
-    background-color: $background-color;
-    border: 1px solid $grey-color-light;
+    top: 30px;
+    right: 30px;
+    background-color: transparent;
+    border: none;
     border-radius: 5px;
     text-align: right;
 
@@ -124,7 +177,7 @@ $screen-xl-min: 1200px;
       text-align: center;
 
       > svg path {
-        fill: $grey-color-dark;
+        fill: #fff;
       }
     }
 
@@ -141,7 +194,7 @@ $screen-xl-min: 1200px;
     .page-link {
       display: block;
       padding: 5px 10px;
-
+      text-transform: uppercase;
       &:not(:last-child) {
         margin-right: 0;
       }
@@ -150,6 +203,90 @@ $screen-xl-min: 1200px;
   }
 }
 
+.site-nav1 {
+  float: right;
+  line-height: $base-line-height * $base-font-size * 2.25;
+
+
+  .nav-trigger1 {
+      display: none;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  .page-link {
+    color: #fff;
+    line-height: $base-line-height;
+
+    @include md-min {display:none;}
+
+    // Gaps between nav items, but not on the last one
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  @include sm {
+    top: 24px !important;
+    right:10px !important;
+  }
+
+  @include md {
+    position: absolute;
+    top: 23px;
+    right: 30px;
+    background-color: #161618;
+    border: none;
+    border-radius: 5px;
+    text-align: right;
+
+    label[for="nav-trigger1"] {
+      display: block;
+      float: right;
+      width: 36px;
+      height: 36px;
+      z-index: 2;
+      cursor: pointer;
+    }
+
+    .menu-icon {
+      display: block;
+      float: right;
+      width: 36px;
+      height: 26px;
+      line-height: 0;
+      padding-top: 10px;
+      text-align: center;
+
+      > svg path {
+        fill: #fff;
+      }
+    }
+
+    input ~ .trigger1 {
+      clear: both;
+      display: none;
+    }
+
+    input:checked ~ .trigger1 {
+      display: block;
+      padding-bottom: 5px;
+    }
+
+    .page-link {
+      display: block;
+      padding: 5px 10px;
+      text-transform: uppercase;
+
+      &:not(:last-child) {
+        margin-right: 0;
+      }
+      margin-left: 20px;
+    }
+  }
+}
 
 
 /**
@@ -176,9 +313,9 @@ $screen-xl-min: 1200px;
   margin-left: -$spacing-unit / 2;
   @extend %clearfix;
 
-    ul {list-style-type: none; display: inline-flex;
+    ul {list-style-type: none; display: inline-flex; margin-left: none;
       li {padding: .4rem;}
-      img {max-width: 50px;}
+      img {max-width: 2rem;}
     }
 }
 
@@ -302,7 +439,9 @@ $screen-xl-min: 1200px;
     }
   }
 }
+/* Custom Header CSS */
 
+.display-none {@include md {display: none !important;}}
 
 /* Background Video */
 
@@ -320,7 +459,7 @@ $screen-xl-min: 1200px;
     -moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-    background: url(background.jpg) no-repeat;}
+    background: url(assets/background.jpg) no-repeat;}
 
 .home-background-video {
     height: 100vh; display: table;
@@ -332,17 +471,26 @@ $screen-xl-min: 1200px;
   display: flex;
   justify-content: center;
   align-items: center;
-    h1, h4, a{color:white; display: block; text-shadow: 2px 2px 2px black; letter-spacing: .3rem;
-      span{font-size:1.4rem;}
-      strong > a{font-weight: 200;
+    h1, h4, a{color:white; display: block; text-shadow: 2px 2px 2px black; letter-spacing: .3rem; font-family: 'Oswald';
+
+      
+      
+      }
+    strong > a{font-weight: 200;
             text-align: center;
             padding: .5rem;
             border: 3px solid #ffffffe6;
             background: #00000080;
             font-size: 1.4rem;}
-      strong > a:hover {text-decoration: none; color:#ecae96cc;}
-      }
+    strong > a:hover {text-decoration: none; color:#ecae96cc;}
+
+    
+
+    span{font-size:.78rem;color:white; 
+        display: block; text-shadow: 2px 2px 2px black; 
+        letter-spacing: .3rem; font-family: 'Oswald';}
     a{color:white;}
+
 }
 
 /* Music */
@@ -351,14 +499,19 @@ $screen-xl-min: 1200px;
   background: url(music-background3.jpg); background-repeat: no-repeat;
   background-size: cover;
     h1 {padding-bottom: 2rem;}
+    @include sm {padding-left: 1rem; padding-right: 1rem;}
 }
+
+#music h1 {@include sm {font-size: 2.2rem;}}
 
 /* Shows */
 #shows {padding: 5rem;
         padding-top: 5rem;
-        padding-top: 3rem; text-align: center; background-color: black;
+        padding-top: 3rem; text-align: center; background-color: #161618;
         h1 {color: white; padding-top: 1rem; padding-bottom: 2rem;}
 }
+
+#shows h1 {@include sm {font-size: 2.2rem;}}
 
 .lower-content h1 {font-size: 3.5rem; font-weight: 200;}
 
@@ -392,8 +545,9 @@ $screen-xl-min: 1200px;
 #mc_embed_signup {background-color: transparent !important;}
 #mc_embed_signup form {text-align: center !important; padding: inherit !important;}
 #mc_embed_signup input.email {margin: 0 auto !important; width: 50% !important; text-align: center !important; 
-  margin-bottom: 1rem !important;}
+  margin-bottom: 1rem !important; max-width: 400px; display: initial !important;}
 #mc_embed_signup .clear {display: ruby !important;}
+#mc_embed_signup input.button {max-width: 300px !important;}
 
 
 
