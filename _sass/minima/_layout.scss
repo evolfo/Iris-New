@@ -1,5 +1,8 @@
 /* Media Queries */
 
+// Small height
+$screen-sm-max-height: 415px;
+
 // Small tablets and large smartphones (landscape view)
 $screen-sm-max: 576px;
 
@@ -15,6 +18,13 @@ $screen-lg-max: 992px;
 
 // Large tablets and desktops
 $screen-xl-max: 1200px;
+
+// Small height
+@mixin sm-h {
+   @media (max-height: #{$screen-sm-max-height}) {
+       @content;
+   }
+}
 
 // Small devices
 @mixin sm {
@@ -64,13 +74,15 @@ $screen-xl-max: 1200px;
   display: block;
   // Positioning context for the mobile navigation icon
   //position: relative;
-  img {margin: 0 auto; display: block; max-width: 10rem; }
+  img {margin: 0 auto; display: block; max-width: 10rem; 
+        @include sm-h {max-width: 6rem;}
+      }
   a {color: #fff; font-weight: 100; font-family: 'helvetica';}
   a:hover {text-decoration: none; color: #ecae96cc;}
   a:focus {color:#ecae96cc;}
   ul {list-style-type: none; display: table; padding-top: 1.2rem;
       li {padding: .9rem; display: table-cell; vertical-align: middle; text-transform: uppercase;} 
-
+      @include sm-h {padding-top: 0.2rem;}
   }
 
 .site-header {
@@ -142,6 +154,10 @@ $screen-xl-max: 1200px;
     &:not(:last-child) {
       margin-right: 20px;
     }
+  }
+  @include sm-h {
+    top: 24px !important; 
+    right: 10px !important;
   }
 
   @include sm {
