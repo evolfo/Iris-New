@@ -509,6 +509,7 @@ $screen-xl-max: 1200px;
         padding-top: 5rem;
         padding-top: 3rem; text-align: center; background-color: #161618;
         h1 {color: white; padding-top: 1rem; padding-bottom: 2rem;}
+        @include sm {padding-right:1rem; padding-left: 1rem;}
 }
 
 #shows h1 {@include sm {font-size: 2.2rem;}}
@@ -531,7 +532,7 @@ $screen-xl-max: 1200px;
 }
 
 .smaller-iframe > div > iframe {
-    @include sm {width: 75% !important; height: 75% !important;}
+    @include sm {width: 91% !important; height: 75% !important;}
   }
 
 /* Subscribe */
