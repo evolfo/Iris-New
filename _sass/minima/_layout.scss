@@ -509,7 +509,7 @@ $screen-xl-max: 1200px;
     a{color:white;}
 
     @include sm {background: url(mobile-background.jpg);  background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: initial;
     background-position: center; }
 }
 
