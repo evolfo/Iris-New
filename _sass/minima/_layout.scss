@@ -72,6 +72,7 @@ $screen-xl-max: 1200px;
   z-index: 1;
   width: 100%;
   display: block;
+  @include sm {background-color: black;}
   // Positioning context for the mobile navigation icon
   //position: relative;
   img {margin: 0 auto; display: block; max-width: 10rem; 
@@ -84,6 +85,7 @@ $screen-xl-max: 1200px;
       li {padding: .9rem; display: table-cell; vertical-align: middle; text-transform: uppercase;} 
       @include sm-h {padding-top: 0.2rem;}
   }
+
 
 .site-header {
   ul > .display-none {@include md {display: none;}}
@@ -503,6 +505,7 @@ $screen-xl-max: 1200px;
     .main-link-wrapper {
       padding: 3px;
       padding-bottom: 20px;
+      @include sm {display: none !important;}
     }
 
     strong > a{font-weight: 200;
@@ -522,9 +525,10 @@ $screen-xl-max: 1200px;
         letter-spacing: .3rem; font-family: 'Oswald';}
     a{color:white;}
 
-    @include sm {background: url(mobile-background.jpg);  background-repeat: no-repeat;
+    @include sm {background: url(mobile-background-chirp.jpg);  background-repeat: no-repeat;
     background-attachment: initial;
-    background-position: center; }
+    background-position: center;
+    background-size: cover; }
 }
 
 /* Music */
@@ -585,6 +589,5 @@ $screen-xl-max: 1200px;
   margin-bottom: 1rem !important; max-width: 400px; display: initial !important;}
 #mc_embed_signup .clear {display: ruby !important;}
 #mc_embed_signup input.button {max-width: 300px !important; min-width: 140px !important; margin: 0 auto !important;}
-
 
 
