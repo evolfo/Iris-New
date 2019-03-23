@@ -481,24 +481,38 @@ $screen-xl-max: 1200px;
 .home-background-video {
     height: 100vh; display: table;
       h1, h2, h3 {display: table-cell; vertical-align: middle; color: white; font-size: 3rem;
-       font-weight: 200; text-shadow: 2px 2px 2px black; letter-spacing: .3rem;}
+       font-weight: 200; text-shadow: 2px 2px 2px black; letter-spacing: .1rem;}
+    
+  iframe {
+    width: 100vw;
+    height: 100vh;
+  }
   }
 
 .front-content{
   display: flex;
   justify-content: center;
-  align-items: center;
-    h1, h4, a{color:white; display: block; text-shadow: 2px 2px 2px black; letter-spacing: .3rem; font-family: 'Oswald';
-
-      
-      
+  align-items: end;
+    h1, h4, a{color:white; display: block; text-shadow: 2px 2px 2px black; letter-spacing: .3rem; font-family: 'Oswald';  
       }
+    
+    div:nth-child(2) {
+      display: flex;
+    }
+
+    .main-link-wrapper {
+      padding: 3px;
+      padding-bottom: 20px;
+    }
+
     strong > a{font-weight: 200;
             text-align: center;
             padding: .5rem;
-            border: 3px solid #ffffffe6;
-            background: #00000080;
-            font-size: 1.4rem;}
+            border: 3px solid #1b12124d;
+            background: #0000004d;
+            font-size: 1.4rem;
+            border-radius: 3px;
+            }
     strong > a:hover {text-decoration: none; color:#ecae96cc;}
 
     
@@ -516,13 +530,15 @@ $screen-xl-max: 1200px;
 /* Music */
 
 #music {padding: 5rem; padding-top: 3rem; text-align: center; 
-  background: url(music-background3.jpg); background-repeat: no-repeat;
+  background: url(music-background4.jpg); background-repeat: no-repeat;
   background-size: cover;
     h1 {padding-bottom: 2rem;}
     @include sm {padding-left: 1rem; padding-right: 1rem;}
 }
 
-#music h1 {@include sm {font-size: 2.2rem;}}
+#music h1 {
+  @include sm {font-size: 2.2rem;} 
+  color: white;}
 
 /* Shows */
 #shows {padding: 5rem;
@@ -538,7 +554,7 @@ $screen-xl-max: 1200px;
 
 /* Videos/Responsive iframe */
 
-#videos {text-align: center; background-color: white;
+#videos {text-align: center; background-color: black;
           padding-top: 5rem;
           padding-bottom: 5rem;
           h1 {padding-bottom: 2rem;}
