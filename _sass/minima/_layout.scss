@@ -494,7 +494,7 @@ $screen-xl-max: 1200px;
 .front-content{
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: flex-end;
     h1, h4, a{color:white; display: block; text-shadow: 2px 2px 2px black; letter-spacing: .3rem; font-family: 'Oswald';  
       }
     
