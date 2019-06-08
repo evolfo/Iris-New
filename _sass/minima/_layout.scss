@@ -67,22 +67,23 @@ $screen-xl-max: 1200px;
 .header {display: none;}
 
 .site-header {
-  min-height: $spacing-unit * 1.865;
   position: fixed;
+  background: #00000069;
   z-index: 1;
   width: 100%;
   display: block;
   @include sm {background-color: black;}
+  @include md {padding-bottom: .8rem;}
   // Positioning context for the mobile navigation icon
   //position: relative;
-  img {margin: 0 auto; display: block; max-width: 10rem; 
+  img {margin: 0 auto; display: block; max-width: 8rem; 
         @include sm-h {max-width: 6rem;}
       }
   a {color: #fff; font-weight: 100; font-family: 'helvetica';}
   a:hover {text-decoration: none; color: #ecae96cc;}
   a:focus {color:#ecae96cc;}
   ul {list-style-type: none; display: table;
-      li {padding: .9rem; display: table-cell; vertical-align: middle; text-transform: uppercase;} 
+      li {padding-left: .9rem; padding-right: .9rem; display: table-cell; vertical-align: middle; text-transform: uppercase;} 
       @include sm-h {padding-top: 0.2rem;}
   }
 
@@ -481,6 +482,11 @@ $screen-xl-max: 1200px;
   }
 
 .home-background-video {
+    background: url(stories-in-glass.jpg);
+    width: 100%;
+    position: relative;
+    background-size: cover;
+    background-position: center;
     height: 100vh; display: table;
       h1, h2, h3 {display: table-cell; vertical-align: middle; color: white; font-size: 3rem;
        font-weight: 200; text-shadow: 2px 2px 2px black; letter-spacing: .1rem;}
@@ -494,12 +500,13 @@ $screen-xl-max: 1200px;
 .front-content{
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
     h1, h4, a{color:white; display: block; text-shadow: 2px 2px 2px black; letter-spacing: .1rem; font-family: 'Oswald';  
       }
     
     div:nth-child(2) {
       display: flex;
+      position: absolute;
     }
 
     .main-link-wrapper {
@@ -511,12 +518,15 @@ $screen-xl-max: 1200px;
     strong > a{font-weight: 200;
             text-align: center;
             padding: .5rem;
-            border: 3px solid #1b12124d;
-            background: #0000004d;
-            font-size: 1.4rem;
+            font-size: 2.8rem;
             border-radius: 3px;
+            color: black;
+            text-shadow: none;
+            margin-top: 1.9rem;
+
+            @include lg {font-size: 1.8rem;}
             }
-    strong > a:hover {text-decoration: none; color:#ecae96cc;}
+    strong > a:hover {text-decoration: none; color:#b2652d;}
 
     
 
