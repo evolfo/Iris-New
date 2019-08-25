@@ -524,6 +524,10 @@ $screen-xl-max: 1200px;
             text-shadow: none;
             margin-top: 1.9rem;
 
+            span {
+              font-size: 3.2rem;
+            }
+
             @include lg {font-size: 1.8rem;}
             }
     strong > a:hover {text-decoration: none; color:#b2652d;}
