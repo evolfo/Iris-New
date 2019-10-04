@@ -16,6 +16,9 @@ $screen-md-min: 769px;
 // Tablets and small desktops
 $screen-lg-max: 992px;
 
+// Breakpoint for header
+$screen-xl-min: 1100px;
+
 // Large tablets and desktops
 $screen-xl-max: 1200px;
 
@@ -54,6 +57,13 @@ $screen-xl-max: 1200px;
    }
 }
 
+// Breakpoint for header
+@mixin xl-min {
+   @media (max-width: #{$screen-xl-min}) {
+       @content;
+   }
+}
+
 // Extra large devices
 @mixin xl {
    @media (max-width: #{$screen-xl-max}) {
@@ -73,7 +83,7 @@ $screen-xl-max: 1200px;
   width: 100%;
   display: block;
   @include sm {background-color: black;}
-  @include md {padding-bottom: .8rem;}
+  @include xl-min {padding-bottom: .8rem;}
   // Positioning context for the mobile navigation icon
   //position: relative;
   img {margin: 0 auto; display: block; max-width: 8rem; 
@@ -83,18 +93,31 @@ $screen-xl-max: 1200px;
   a:hover {text-decoration: none; color: #ecae96cc;}
   a:focus {color:#ecae96cc;}
   ul {list-style-type: none; display: table;
-      li {padding-left: .9rem; padding-right: .9rem; display: table-cell; vertical-align: middle; text-transform: uppercase;} 
+      li {padding-left: .9rem; padding-right: .9rem; display: table-cell; vertical-align: middle; text-transform: uppercase;}
+      button {
+        width: 11rem !important;
+        -moz-box-align: center;
+        align-items: center;
+        background-color: rgb(232, 91, 70);
+        border-radius: 9999px;
+        border: medium none;
+        box-sizing: border-box;
+        color: rgb(255, 255, 255) !important;
+        display: inline-flex;
+        -moz-box-pack: center;
+        justify-content: center;
+        padding: 0.594rem 1rem;
+        position: relative;
+      } 
       @include sm-h {padding-top: 0.2rem;}
   }
-
-
-.site-header {
-  ul > .display-none {@include md {display: none;}}
-  }
-  
 }
 
-.site-header > div > ul {@include md {margin:0 auto;}}
+.site-header {
+  ul > .display-none {@include xl-min {display: none;}}
+}
+
+.site-header > div > ul {@include xl-min {margin:0 auto;}}
 
 .site-header1 {
   min-height: $spacing-unit * 1.865;
@@ -104,22 +127,35 @@ $screen-xl-max: 1200px;
   background-color: #161618;
   // Positioning context for the mobile navigation icon
   //position: relative;
-  img {margin: 0 auto; display: block; max-width: 6rem; }
+  img {margin: 0 auto; display: block; max-width: 6rem; margin-top: -12px;}
   a {color: #fff; font-weight: 100; font-family: 'helvetica';}
   a:hover {text-decoration: none; color: #ecae96cc;}
   a:focus {color:#ecae96cc;}
   ul {list-style-type: none; display: table; padding-top: .2rem; margin-bottom: 5px; margin-left: 60px;
       li {padding: .9rem; display: table-cell; vertical-align: middle; text-transform: uppercase;} 
-
+      button {
+        width: 11rem !important;
+        -moz-box-align: center;
+        align-items: center;
+        background-color: rgb(232, 91, 70);
+        border-radius: 9999px;
+        border: medium none;
+        box-sizing: border-box;
+        color: rgb(255, 255, 255) !important;
+        display: inline-flex;
+        -moz-box-pack: center;
+        justify-content: center;
+        padding: 0.594rem 1rem;
+        position: relative;
+      } 
   }
-
-.site-header1 {
-  ul > .display-none {@include md {display: none;}}
-  }
-  
 }
 
-.site-header1 > div > ul {@include md {margin:0 auto;}}
+.site-header1 {
+  ul > .display-none {@include xl-min {display: none;}}
+}
+
+.site-header1 > div > ul {@include xl-min {margin:0 auto;}}
 
 .site-title {
   @include relative-font-size(1.625);
@@ -168,7 +204,7 @@ $screen-xl-max: 1200px;
     right:10px !important;
   }
 
-  @include md {
+  @include xl-min {
     position: absolute;
     top: 30px;
     right: 30px;
@@ -252,7 +288,7 @@ $screen-xl-max: 1200px;
     right:10px !important;
   }
 
-  @include md {
+  @include xl-min {
     position: absolute;
     top: 23px;
     right: 30px;
@@ -312,7 +348,7 @@ $screen-xl-max: 1200px;
  * Site footer
  */
 .site-footer {
-  padding: 0px; text-align: center; background-color: #161618;
+  padding: 0px; text-align: center; background-color: #161618; margin-top: -10px;
 }
 
 .footer-heading {
@@ -460,7 +496,7 @@ $screen-xl-max: 1200px;
 }
 /* Custom Header CSS */
 
-.display-none {@include md {display: none !important;}}
+.display-none {@include xl-min {display: none !important;}}
 
 /* Background Video */
 
