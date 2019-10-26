@@ -95,7 +95,7 @@ $screen-xl-max: 1200px;
   ul {list-style-type: none; display: table;
       li {padding-left: .9rem; padding-right: .9rem; display: table-cell; vertical-align: middle; text-transform: uppercase;}
       button {
-        width: 11rem !important;
+        width: 6.5rem !important;
         -moz-box-align: center;
         align-items: center;
         background-color: rgb(232, 91, 70);
@@ -110,6 +110,22 @@ $screen-xl-max: 1200px;
         position: relative;
       } 
       @include sm-h {padding-top: 0.2rem;}
+  }
+
+  .accordion {
+    padding-left: .9rem;
+    padding-right: .9rem;
+    margin-top: .75rem;
+  }
+
+  .content {
+    padding: 1rem !important;
+  }
+
+  .active:nth-child(2) {
+    display: grid !important;
+    position: absolute;
+    background: #00000069;
   }
 }
 
@@ -148,6 +164,22 @@ $screen-xl-max: 1200px;
         padding: 0.594rem 1rem;
         position: relative;
       } 
+  }
+  .accordion {
+    padding-left: .9rem;
+    padding-right: .9rem;
+    margin-top: .75rem;
+  }
+
+  .content {
+    
+    padding: 1rem !important;
+  }
+
+  .active:nth-child(2) {
+    position: absolute;
+    display: grid !important;
+    background: #000;
   }
 }
 
@@ -559,6 +591,7 @@ $screen-xl-max: 1200px;
             color: black;
             text-shadow: none;
             margin-top: 1.9rem;
+            line-height: 3rem;
 
             span {
               font-size: 3.2rem;
