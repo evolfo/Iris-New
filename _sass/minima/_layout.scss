@@ -78,7 +78,7 @@ $screen-xl-max: 1200px;
 
 .site-header {
   position: fixed;
-  background: #00000069;
+  background: black;
   z-index: 1;
   width: 100%;
   display: block;
@@ -550,7 +550,6 @@ $screen-xl-max: 1200px;
   }
 
 .home-background-video {
-    background: url(stories-in-glass.jpg);
     width: 100%;
     position: relative;
     background-size: cover;
@@ -569,6 +568,8 @@ $screen-xl-max: 1200px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: -5px;
+
     h1, h4, a{color:white; display: block; text-shadow: 2px 2px 2px black; letter-spacing: .1rem; font-family: 'Oswald';  
       }
     
@@ -608,7 +609,7 @@ $screen-xl-max: 1200px;
         letter-spacing: .3rem; font-family: 'Oswald';}
     a{color:white;}
 
-    @include sm {background: url(mobile-background-chirp.jpg);  background-repeat: no-repeat;
+    @include sm {  background-repeat: no-repeat;
     background-attachment: initial;
     background-position: center;
     background-size: cover; }
