@@ -402,7 +402,7 @@ $screen-xl-max: 1200px;
 
     ul {list-style-type: none; display: inline-flex; margin-left: none;
       li {padding: .4rem;}
-      img {max-width: 2rem;}
+      img {max-width: 3rem;}
     }
 }
 
@@ -618,7 +618,7 @@ $screen-xl-max: 1200px;
 /* Music */
 
 #music {padding: 5rem; padding-top: 3rem; text-align: center; 
-  background: url(music-background4.jpg); background-repeat: no-repeat;
+  background: url(lovelosslove.jpg); background-repeat: no-repeat;
   background-size: cover;
     h1 {padding-bottom: 2rem;}
     @include sm {padding-left: 1rem; padding-right: 1rem;}
@@ -642,7 +642,7 @@ $screen-xl-max: 1200px;
 
 /* Videos/Responsive iframe */
 
-#videos {text-align: center; background-color: black;
+#videos {text-align: center; background: url(lovelosslove.jpg); background-repeat: no-repeat; background-size: cover;
           padding-top: 5rem;
           padding-bottom: 5rem;
           h1 {padding-bottom: 2rem;}
